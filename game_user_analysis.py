@@ -269,6 +269,7 @@ plt.ylabel("Active Users")
 
 plt.grid(True)
 
+plt.savefig("dau_trend.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # ==========================================
@@ -294,6 +295,7 @@ plt.title("Retention Rate")
 
 plt.ylabel("Rate")
 
+plt.savefig("retention_rate.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # ==========================================
@@ -319,6 +321,7 @@ plt.ylabel(
     "User Count"
 )
 
+plt.savefig("user_activity_distribution.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 print("\n")

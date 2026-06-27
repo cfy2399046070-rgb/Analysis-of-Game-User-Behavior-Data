@@ -42,9 +42,21 @@
 - 对比付费用户与免费用户群体的平均登录天数差异
 
 ### 8. 数据可视化
-- **DAU 趋势图**：折线图展示每日活跃用户数变化
-- **留存率柱状图**：柱状图展示相邻日留存率
-- **用户活跃度分布直方图**：展示用户登录天数的分布情况
+
+运行脚本后将在当前目录生成三张 PNG 图片：
+
+#### DAU 趋势图 (`dau_trend.png`)
+- 折线图，横轴为 Day 1~7，纵轴为去重活跃用户数
+- 每日 DAU 稳定在 560~600 人之间，整体波动较小
+
+#### 留存率柱状图 (`retention_rate.png`)
+- 柱状图，展示 6 组相邻日次日留存率（1→2、2→3、...、6→7）
+- 留存率 = 相邻两天共同活跃用户数 / 前一天活跃用户数
+- 各日留存率稳定在 65%~69% 区间
+
+#### 用户活跃度分布直方图 (`user_activity_distribution.png`)
+- 直方图，横轴为登录天数（1~7），纵轴为用户人数
+- 展示 1000 名用户登录天数的整体分布情况，7 天全勤用户占比最高
 
 ## 技术栈
 
@@ -86,16 +98,19 @@ python game_user_analysis.py
 6. 用户分层数量
 7. 付费用户统计及与活跃度的关联分析
 
-同时弹出三个可视化图表窗口，并在当前目录生成 `user_behavior_data.csv` 数据文件。
+同时将在当前目录生成三张 PNG 图表文件（`dau_trend.png`、`retention_rate.png`、`user_activity_distribution.png`）以及 `user_behavior_data.csv` 数据文件。
 
 ## 项目结构
 
 ```
 .
-├── game_user_analysis.py    # 主分析脚本
-├── user_behavior_data.csv   # 生成的模拟数据文件
-├── venv/                    # Python 虚拟环境
-└── README.md                # 项目说明文档
+├── game_user_analysis.py              # 主分析脚本
+├── user_behavior_data.csv             # 生成的模拟数据文件
+├── dau_trend.png                      # DAU 趋势折线图
+├── retention_rate.png                 # 留存率柱状图
+├── user_activity_distribution.png     # 用户活跃度分布直方图
+├── venv/                              # Python 虚拟环境
+└── README.md                          # 项目说明文档
 ```
 
 ## 应用场景
@@ -151,9 +166,21 @@ This project is a Python-based game user behavior data analysis system. It simul
 - Compares the average login days between paying and free user groups
 
 ### 8. Data Visualization
-- **DAU Trend Chart**: Line chart showing daily active user count changes
-- **Retention Rate Bar Chart**: Bar chart showing adjacent-day retention rates
-- **User Activity Distribution Histogram**: Displays the distribution of user login days
+
+Running the script will generate three PNG images in the current directory:
+
+#### DAU Trend Chart (`dau_trend.png`)
+- Line chart with Day 1~7 on the x-axis and unique active user count on the y-axis
+- Daily DAU remains stable between 560 and 600 users with minimal fluctuation
+
+#### Retention Rate Bar Chart (`retention_rate.png`)
+- Bar chart displaying next-day retention rates for 6 adjacent day pairs (1→2, 2→3, ..., 6→7)
+- Retention Rate = Users active on both adjacent days / Users active on the previous day
+- Retention rates stay consistently within the 65%–69% range
+
+#### User Activity Distribution Histogram (`user_activity_distribution.png`)
+- Histogram with login days (1–7) on the x-axis and user count on the y-axis
+- Displays the overall distribution of login days across all 1,000 users, with 7-day fully-active users comprising the largest share
 
 ## Tech Stack
 
@@ -195,16 +222,19 @@ After running the script, the following analysis results will be output to the t
 6. User segmentation counts
 7. Paying user statistics and their correlation with activity
 
-Three visualization chart windows will also pop up, and a `user_behavior_data.csv` data file will be generated in the current directory.
+Three PNG chart files (`dau_trend.png`, `retention_rate.png`, `user_activity_distribution.png`) will also be saved in the current directory, along with a `user_behavior_data.csv` data file.
 
 ## Project Structure
 
 ```
 .
-├── game_user_analysis.py    # Main analysis script
-├── user_behavior_data.csv   # Generated simulated data file
-├── venv/                    # Python virtual environment
-└── README.md                # Project documentation
+├── game_user_analysis.py              # Main analysis script
+├── user_behavior_data.csv             # Generated simulated data file
+├── dau_trend.png                      # DAU trend line chart
+├── retention_rate.png                 # Retention rate bar chart
+├── user_activity_distribution.png     # User activity distribution histogram
+├── venv/                              # Python virtual environment
+└── README.md                          # Project documentation
 ```
 
 ## Use Cases
